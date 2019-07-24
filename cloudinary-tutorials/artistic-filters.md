@@ -1,5 +1,3 @@
-# Artistic Filters
-
 ![artistic filters in poloroid frames](https://res.cloudinary.com/cloudinary/image/upload/w_700/blog_poloroid_filters_wide.jpg)
 
 Every picture has a story to tell. But the story it tells can change when you change the color tone, saturation, contrast, or other elements of a photo.
@@ -76,3 +74,4 @@ The artistic filters, along with many other upload and manipulation features, ar
 
 We invite you to comment below to tell us your favorite filters and to share your unique ideas for combining them with other features.
 
+**test**
