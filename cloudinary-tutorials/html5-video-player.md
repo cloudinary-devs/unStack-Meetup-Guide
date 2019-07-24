@@ -1,5 +1,7 @@
 # HTML5 Video Player
 
+
+
 ![HTML5 video player](https://res.cloudinary.com/cloudinary/image/upload/w_500/html5_video_player.png)
 
 Once upon a time, in long forgotten browser versions, getting a video into a website required creating and embedding Flash resources. But these days, all modern browsers support HTML5, including the HTML5 `<video>` tag, which means you’ve got a built-in video player that anyone can use.
@@ -98,7 +100,7 @@ $.cloudinary.video("dog")
 
 automatically generates an entire `<video>` HTML snippet, including automatically generating the `<source>` URLs for transcoding to all three formats. And it always puts the WebM format first, since that format generally produces smaller formats, so that browsers that support it, will always deliver the smaller format.
 
-More details about this tag [below](html5-video-player.md#all_for_one_and_one_for_all).
+More details about this tag [below]().
 
 When you transcode video on-the-fly, the conversion may take some time the first time a user accesses it, but all subsequent requests to the same URL are delivered quickly via the CDN cache. To avoid the lag time even for your first viewer, use [eager transformations](https://cloudinary.com/documentation/upload_videos#eager_video_transformations) to prepare your content as part of the upload process.
 
@@ -194,7 +196,7 @@ Where the `public_id` is the name of a video that has been uploaded to your Clou
 * A poster image \(default = middle frame\), and any transformations to apply on that image.
 * Any transformations you want to apply to the transformed video.
 * fallback text content for \(ancient\) browsers that don’t support any of the output source formats.
-* any attribute of the HTML5 `<video>` tag \(to customize those player options we mentioned [earlier in this article](html5-video-player.md#what_s_in_an_html5_video_tag)\).
+* any attribute of the HTML5 `<video>` tag \(to customize those player options we mentioned [earlier in this article]()\).
 
 As we mentioned previously, the `cl_video_tag` method call can look as simple as this:
 
@@ -239,7 +241,7 @@ But as you saw from the list of options above, you can really go all out with th
 
 In the following example:
 
-* We use the custom poster image we talked about [earlier in this post](html5-video-player.md#grand_opening), for a theatrical opening.
+* We use the custom poster image we talked about [earlier in this post](), for a theatrical opening.
 * We set our timelapse video to `loop`, for those who want to enjoy more than one sunrise and sunset.
 * We `crop` the video to `640`x`480` \(4:3 aspect ratio\) using the `pad` method, so that one size video player can host videos uploaded in both 4:3 and 16:9 ratios.
 * We lower the `quality` to `70`, which decreases the file size from 17.5 MB to 8.2 MB.

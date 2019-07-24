@@ -1,5 +1,7 @@
 # Media Authentication
 
+
+
 ![with\_code: false, with\_url: false](https://res.cloudinary.com/demo/image/upload/cookie_authentication_header.jpg)
 
 Controlling who can access your images and videos, and when, can be an important concern for your business and security workflow. You may have resources that you only want some of your users or employees to access, or you may need to make sure that your original resources are secure, and only transformed \(edited\) versions of your resources are delivered, e.g., with a watermark or logo displayed.

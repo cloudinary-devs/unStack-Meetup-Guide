@@ -1,5 +1,7 @@
 # Distortion Effects
 
+
+
 ![Distort images in the cloud](https://res.cloudinary.com/cloudinary/image/upload/w_500/distort_post.jpg)
 
 It can be quite a challenge to graphically design a website or mobile application that displays images in very precise shapes and orientations. This can take the form of warping 2D pictures to have a 3D perspective, placing images in precise shapes or overlaying images in specific locations within another image, for example: overlaying an image over the screen of a smartphone.

@@ -1,3 +1,5 @@
+# Artistic Filters
+
 ![artistic filters in poloroid frames](https://res.cloudinary.com/cloudinary/image/upload/w_700/blog_poloroid_filters_wide.jpg)
 
 Every picture has a story to tell. But the story it tells can change when you change the color tone, saturation, contrast, or other elements of a photo.
@@ -10,7 +12,7 @@ But research shows that filtered photos increase engagement. According to a rece
 
 So filters can be really valuable, both for your own site photos and to add value for your users, but developing a set of proprietary filters would be a hefty project. No worries. Cloudinary now offers 21 artistic filter transformations for Web and app developers to choose from. This makes it easy to adjust your photos on-the-fly to match the message and design of a particular page, or to pass them on as a feature to the users who upload photos to your site or app.
 
-## How does it work?
+### How does it work?
 
 Normally, generating these effects on your site or app would involve complex client-side CSS, javascript coding, and SVG rendering to achieve the desired combinations of blurring, sharpening, gradient overlays, recoloring, and blending effects.
 
@@ -18,13 +20,13 @@ But when you use Cloudinary's artistic filters, we handle all the image processi
 
 ![with\_image:false](https://res.cloudinary.com/demo/image/upload/e_art:red_rock/bicycle.jpg)
 
-## Sandbox
+### Sandbox
 
 OK, so you wanna play too? Here’s a sandbox where you can try out all the available filters on a few images with different kinds of content.
 
 [View Sandbox Demo](https://codepen.io/cloudinary/live/EZYmgz/)
 
-## Taking it up a notch
+### Taking it up a notch
 
 Above, you can see how simple it is to apply any of the available artistic filters to any photo, but you don’t have to stop there...
 
@@ -54,7 +56,7 @@ Note that while you will get a similar result if you reverse the order of the ch
 
   **Note**: For the purposes of the above example, the two conditions also use different dimensions so that it's easy to see which condition was applied to each one.
 
-## What’s in a name?
+### What’s in a name?
 
 After having seen and experimented with our list of filters, maybe you are wondering where those names came from and what each one is good for? Like most photo filters available out there, our filter names have a variety of origins. And filters tend to have different impacts on different content, so there are no hard and fast rules. But below, we share a bit of background on some of the names and where they might come in handy.
 
@@ -66,7 +68,7 @@ When you want to go for warmth, **athena**, the Greek goddess of arts and litera
 
 Well, you get the idea. You’ll really have to play with them all to decide what’s best for your photos. But if you are not sure, do keep in mind that according to the [study](http://comp.social.gatech.edu/papers/icwsm15.why.bakhshi.pdf) mentioned above, filters that increase warmth, exposure, and contrast seem to boost views and comments.
 
-## Now it’s your turn
+### Now it’s your turn
 
 You’ve read how the right filter can increase user engagement, and you now know that all it takes to apply filters to your photos is a simple `e_art` transformation. Letting your users express their own personality with the photos they upload to your site or app is just as easy. You’ve had a chance to toy around with the filters on our `sandbox` photos. Now it’s time to let your creativity run wild on your own images.
 
@@ -74,4 +76,3 @@ The artistic filters, along with many other upload and manipulation features, ar
 
 We invite you to comment below to tell us your favorite filters and to share your unique ideas for combining them with other features.
 
-**test**

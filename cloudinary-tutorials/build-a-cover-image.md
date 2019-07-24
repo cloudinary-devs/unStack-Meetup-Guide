@@ -1,90 +1,78 @@
----
-description: By Dan Zeitman and Miki Shiran
----
-
 # Build a Cover Image
 
-In this example we'll take a performance image and create a cover image. Here we have the amazing artist, Wiz Khalifa - image copyright and courtesy of Ardentes Music Festival.
+![artistic filters in poloroid frames](https://res.cloudinary.com/cloudinary/image/upload/w_700/blog_poloroid_filters_wide.jpg)
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,w_300,dpr_2.0/wallifornia/wiz-khalifa.jpg.png)
+Every picture has a story to tell. But the story it tells can change when you change the color tone, saturation, contrast, or other elements of a photo.
 
-Beautifully cropped square image, but to make it a cover image we need the image to fit into a 16:9 aspect ratio. We will need to pad the image to make up the image fit into the new aspect ratio. First step is to example the direction the performer's eyes are gazing. Wayne is looking to the left so let's add lead space and pad the image to the left.
+A few years ago, post-processing a digital image generally required a high level of skill and expensive software such as PhotoShop. But in recent years, popular photo sharing apps such as Instagram, Flickr, and Snapchat started offering built-in filters. Professionals take advantage of filters to make subtle corrections or adjustments. Casual users often apply more prominent filters that add their own unique touch or just make their images more fun.
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,w_600,ar_16:9,c_lpad,g_west,dpr_2.0/wallifornia/wiz-khalifa.jpg.png)
+These easy-to-apply filters have made photo post-processing an almost integral and expected part of the process; so much so that people feel the need to make a point of noting when they've actually posted an unaltered photo: the **\#nofilter** hashtag.
 
-`http://res.cloudinary.com/tamas-demo/image/upload/ar_16:9,c_lpad,g_west/v1530016018/wallifornia/wiz-khalifa.jpg`
+But research shows that filtered photos increase engagement. According to a recent [study](http://comp.social.gatech.edu/papers/icwsm15.why.bakhshi.pdf) by _Yahoo Labs_ and _Georgia Tech_, filtered images are **21% more likely to be viewed** and **45% more likely to be commented on** than non-filtered counterparts.
 
-We added aspect ratio of 16:9, cropping of lpad and gravity west to create the image and move it to the right. This done simply by adding the params into the url as follows:
+So filters can be really valuable, both for your own site photos and to add value for your users, but developing a set of proprietary filters would be a hefty project. No worries. Cloudinary now offers 21 artistic filter transformations for Web and app developers to choose from. This makes it easy to adjust your photos on-the-fly to match the message and design of a particular page, or to pass them on as a feature to the users who upload photos to your site or app.
 
-```text
-ar_16:9,c_lpad,g_west
-```
+### How does it work?
 
-Nice but would it be better if the background color matched the exact same color as the backgound in our original? Easy! Just add background auto to our url:
+Normally, generating these effects on your site or app would involve complex client-side CSS, javascript coding, and SVG rendering to achieve the desired combinations of blurring, sharpening, gradient overlays, recoloring, and blending effects.
 
-```text
-b_auto
-```
+But when you use Cloudinary's artistic filters, we handle all the image processing on the cloud. All you have to do is pick the filter you want, add it as an `e_art:<filter-name>` transformation in the image URL, or using any of our SDK framework languages, and deliver. For example:
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,w_600,ar_16:9,c_lpad,g_west,b_auto,dpr_2.0/wallifornia/wiz-khalifa.jpg.png)
+![with\_image:false](https://res.cloudinary.com/demo/image/upload/e_art:red_rock/bicycle.jpg)
 
-`http://res.cloudinary.com/tamas-demo/image/upload/ar_16:9,c_lpad,g_west,b_auto/v1530016018/wallifornia/wiz-khalifa.jpg`
+### Sandbox
 
-Looking good! Now let's optimize this for performance and quality.
+OK, so you wanna play too? Here’s a sandbox where you can try out all the available filters on a few images with different kinds of content.
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/ar_16:9,c_lpad,g_west,b_auto,dpr_2.0/wallifornia/wiz-khalifa.jpg.png)
+[View Sandbox Demo](https://codepen.io/cloudinary/live/EZYmgz/)
 
-We can optimize the dpi, format, and quality with a few additional params in our url:
+### Taking it up a notch
 
-```text
-dpr_auto,f_auto,q_auto:best
-```
+Above, you can see how simple it is to apply any of the available artistic filters to any photo, but you don’t have to stop there...
 
-The addition of these params will improve performance and delivery of the final image tremendously, In general you should always use them.
+* **double the fun**: If no single artistic filter achieves exactly the effect or impact you are looking for, don’t limit yourself to one. If you want to increase the aggressiveness of a filter, simply chain the same filter in consecutive transformation components. For example, here’s the sandbox photo with no filter, a single `athena` filter, and a double `athena` \(**.../upload/e\_art:athena/e\_art:athena/sandbox.jpg**\) filter. Each application of the filter adds a bit more of a yellow sunny center and slightly more washed out color at the edges.  
 
-`http://res.cloudinary.com/tamas-demo/image/upload/w_1600,ar_16:9,c_lpad,g_west,b_auto,dpr_auto,f_auto,q_auto:best/v1530016018/wallifornia/wiz-khalifa.jpg`
+![original image - no filter](https://res.cloudinary.com/demo/image/upload/w_200/sandbox.jpg) **Original** ![athena artistic filter](https://res.cloudinary.com/demo/image/upload/w_200/e_art:athena/sandbox.jpg) **Athena X 1** ![athena X 2](https://res.cloudinary.com/demo/image/upload/w_200/e_art:athena/e_art:athena/sandbox.jpg) **Athena X 2**
 
-You'll notice we also added a width param: **w\_1600** - You'd set this to fit the image into a explicit layout size, if you omit it you'll get the original image size. The example here were set at a width of 600 to fit nicely in the layout.
+In the same way, you can also chain transformations to apply two \(or more\) different filters, making the possibilities endless. For example, below we take advantage of the telescopic effect of `zorro` along with the historical grays of `daguerre`.
 
-Our cover image allready looks awesome, but let add a artistic filter to enhance the black and white image. Adding the effect param with a named filter is how we do it.
+![Two different filters applied](https://res.cloudinary.com/demo/image/upload/e_art:zorro/e_art:daguerre/w_300/sandbox.jpg)
 
-```text
-e_art:zorro
-```
+Note that while you will get a similar result if you reverse the order of the chained artistic filters, it is not identical, so it’s always worth trying in both directions.
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,w_600,ar_16:9,dpr_2.0,c_lpad,g_west,b_auto,dpr_auto,f_auto,q_auto:best,e_art:zorro/wallifornia/wiz-khalifa.jpg.png)
+* **mix and match**: You can also achieve unique results by chaining an artistic filter before or after [other effects](https://github.com/cloudinary-developers/canadian-music-week-hackathon-guide-/tree/39a9b1c59498323c6876cd302c24ff20894ab40f/documentation/image_transformations/README.md#applying_image_effects_and_filters), such as `tint`, `blur`, `sharpen`, `pixelate`, `vignette`, `contrast`, `vibrance`, `oil paint` and more. Check out what happens when we decide to both `pixelate` and add the `red_rock` filter to this dog:
 
-Nice vibe! You can almost hear Wiz's heavy rapping beats. We have dozens of artistic filters, text and image overlays to experiment with and make that cover image pop.
+![with\_image: false](https://res.cloudinary.com/demo/image/upload/w_200/e_pixelate:3/e_art:red_rock/dog.jpg)
 
-This looks great so far however the background colour that we have generated stands out a little bit as there’s a seam between the original image and the generated background. We can very easily fix this visual defect by adding a gradient fade to ease the background colour to the main image.
+![original image](https://res.cloudinary.com/demo/image/upload/w_200/dog.jpg) **Original** ![pixelate effect](https://res.cloudinary.com/demo/image/upload/w_200/e_pixelate:3/dog.jpg) **Pixelate effect** ![pixelate + red\_rock filter effects](https://res.cloudinary.com/demo/image/upload/w_200/e_pixelate:3/e_art:red_rock/dog.jpg) **Pixelate + red\_rock filter**
 
-We can achieve that by adding these parameters to the image:
+* **on condition**: Different types of filters may be appropriate for different subject matter. Some are better for outdoors, some for inanimate objects, and so on. Consider using [conditions](https://cloudinary.com/documentation/image_transformations#specifying_conditions) in your transformation to apply a particular filter only for images with a particular tag. For example, the URL below applies the bright-day effect of the `peacock` filter only if the image has `nature` in it’s tag set:
 
-`e_gradient_fade:symmetric_pad,x_50/e_art:zorro/`
+  ![](https://res.cloudinary.com/demo/image/upload/if_!nature!_in_tags,c_fill,h_160,w_240,e_art:peacock/if_else,c_fill,h_400,w_600/sandbox.jpg)
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,w_600,ar_16:9,dpr_2.0,c_lpad,g_west,b_auto,dpr_auto,f_auto,q_auto:best,e_gradient_fade:symmetric_pad,x_50/e_art:zorro/wallifornia/wiz-khalifa.jpg.png)
+  The `sandbox` image has the `nature` tag, so the `peacock` filter is applied, but if you use the exact same transformation for the
 
-Notice how the previously added artistic filter is added as a different layer. We are required to specify it this way since the gradient fade will now occupy a layer and we need the artistic filter to be on a different layer in order for it to be visible.
+  [partners\_table.jpg](https://res.cloudinary.com/demo/image/upload/if_!nature!_in_tags,c_fill,h_160,w_240,e_art:peacock/if_else,c_fill,h_400,w_600/partners_table.jpg) image, it is not. You could of course add several `if` components to cover a number of different tags and corresponding filters to apply.
 
-Finally, we are also going to place the logo of the festival in the middle of our newly generated image - this would make a great addition to the image itself.
+  **Note**: For the purposes of the above example, the two conditions also use different dimensions so that it's easy to see which condition was applied to each one.
 
-This is the logo that we’ll be using - it is also loaded as an asset to Cloudinary:
+### What’s in a name?
 
-![](https://res.cloudinary.com/tamas-demo/image/upload/v1530018414/wallifornia/logo20182x.jpg)
+After having seen and experimented with our list of filters, maybe you are wondering where those names came from and what each one is good for? Like most photo filters available out there, our filter names have a variety of origins. And filters tend to have different impacts on different content, so there are no hard and fast rules. But below, we share a bit of background on some of the names and where they might come in handy.
 
-Notice that this logo has a white background and a certain size as well, which is a tad too large for our scenario. So it’s not only enough to place the image as an overlay but we need to apply some transformation to this image before we add it as a new layer. We can achieve this by adding the following options:
+In the monochrome family, we decided to name our sharp black and white filter after **Audrey** Hepburn, while the more fuzzy gray-toned filter is named for Louis-Jacques-Mandé **Daguerre** \(1787 - 1851\), inventor of the daguerreotype process of photography. On the other hand, **incognito** gives you a dark monochrome with a mysterious, subtle purplish tone.
 
-`/e_make_transparent:10,l_wallifornia:logo20182x.jpg,w_140/`
+For cooler colors, **primavera** \(meaning ‘spring’ in many romance languages\) gives a high contrast, blue-sky effect to your nature scenes. **Peacock** adds a bright blue tint with a high exposure that can brighten your outdoor shots, but may make people look slightly pale. **Eucalyptus**, not surprisingly, has a light green touch, which gives grass and trees a healthy look. Try **linen** for a crisp, clean feel, or **frost** for modern images and inanimate objects.
 
-And here is the final result:
+When you want to go for warmth, **athena**, the Greek goddess of arts and literature, and daughter of sun god, Zeus, can make almost any day look yellow and sunny. Or maybe you want to give your pictures a pinkish tone and the gentle spotlight effect of **aurora**, named for the polar light seen in arctic regions. If you are looking for a warm retro feel with a soft purple-pink hue, consider **fes** \(a Moroccan city\). Or perhaps go for a nostalgic faded look with **hokusai**, named for the Japanese artist who painted in that style.
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/c_scale,,dpr_2.0,w_600,ar_16:9,c_lpad,g_west,b_auto,dpr_auto,f_auto,q_auto:best,e_gradient_fade:symmetric_pad,x_50/e_make_transparent:10,l_wallifornia:logo20182x.jpg,w_140/e_art:zorro/v1530016018/wallifornia/wiz-khalifa.jpg.png)
+Well, you get the idea. You’ll really have to play with them all to decide what’s best for your photos. But if you are not sure, do keep in mind that according to the [study](http://comp.social.gatech.edu/papers/icwsm15.why.bakhshi.pdf) mentioned above, filters that increase warmth, exposure, and contrast seem to boost views and comments.
 
-Let's also add some text to this image to display the name of the artist. We can very easily achieve that by adding yet another layer and specify some options \(such as the font family, font size and additional options\):
+### Now it’s your turn
 
-`/l_text:roboto_45:Wiz%20Khalifa,co_black,g_south_east,x_30,y_10,w_600,c_fit/`
+You’ve read how the right filter can increase user engagement, and you now know that all it takes to apply filters to your photos is a simple `e_art` transformation. Letting your users express their own personality with the photos they upload to your site or app is just as easy. You’ve had a chance to toy around with the filters on our `sandbox` photos. Now it’s time to let your creativity run wild on your own images.
 
-This is how the final result looks like:
+The artistic filters, along with many other upload and manipulation features, are available with all of Cloudinary’s plans including the [free plan](https://cloudinary.com/signup).
 
-![](http://res.cloudinary.com/tamas-demo/image/upload/ar_16:9,,dpr_2.0,c_lpad,g_west,b_auto/e_gradient_fade:symmetric_pad,x_50/e_art:zorro//e_make_transparent:10,l_wallifornia:logo20182x.jpg,w_140/l_text:roboto_45:Wiz%20Khalifa,co_black,g_south_east,x_30,y_10,w_600,c_fit/v1530016018/wallifornia/wiz-khalifa.jpg.png)
+We invite you to comment below to tell us your favorite filters and to share your unique ideas for combining them with other features.
 

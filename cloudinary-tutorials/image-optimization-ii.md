@@ -1,5 +1,9 @@
 # Image Optimization II
 
+
+
+
+
 ![Auto everything - Images solved](https://res.cloudinary.com/cloudinary/image/upload/w_500/auto_everything_post.jpg)
 
 Every image is unique and every one of your website visitors is different. In a perfect world, we'd like to adapt each image individually to be "just right" for every user. With "just right" being perfectly cropped, using responsive dimensions, correct encoding settings and optimal quality with the best image format.

@@ -1,5 +1,7 @@
 # Audio to Waveform Images
 
+
+
 ![Generate waveform of uploaded audio and video files](https://res.cloudinary.com/cloudinary/image/upload/w_500/waveform_post.png)
 
 Many social networks, websites and messaging applications allow users to upload a wide variety of media files, and although the majority of files are in the form of images and video clips, a significant minority are audio files. When the website or application subsequently needs to display a thumbnail that describes the uploaded content, images can be cropped and resized down to scale, and a single frame from a video clip can be converted to an image and then also cropped and resized down to scale.

@@ -1,5 +1,7 @@
 # Social and Cloud Sources
 
+
+
 ![JavaScript Upload widget with third party media sources](https://cloudinary-res.cloudinary.com/image/upload/w_700/upload_widget_media_sources_post.jpg)
 
 As developers of web apps, you often need to let users upload files to your app - mainly images and videos. You want the upload interface you provide to offer an intuitive user experience, including the ability to drag & drop multiple media files, preview thumbnails of selected images and videos, view upload progress indication and more. Since we now all live in the cloud era, chances are that many of your users also store media files in the cloud rather than only locally on hard drives and mobile devices, so the option to pick files from social networks like Facebook, cloud storage services such as Dropbox, photo services like Google Photos and more is a big advantage.
@@ -26,7 +28,7 @@ By including a small JavaScript library and adding a single JavaScript call, you
 
 Here's a live example. Click the button below to see the widget in action and try out the different media source tabs.
 
-[Upload Images](social-and-cloud-sources.md)
+[Upload Images]()
 
 ```javascript
 function waitForjQuery(method) {
