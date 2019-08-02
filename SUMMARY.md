@@ -5,7 +5,6 @@
 
 ## Cloudinary Tutorials
 
-* [Build a Cover Image](cloudinary-tutorials/build-a-cover-image.md)
 * [Video Transcoding](cloudinary-tutorials/video-transcoding.md)
 * [HTML5 Video Player](cloudinary-tutorials/html5-video-player.md)
 * [Media Authentication](cloudinary-tutorials/media-authentication.md)
